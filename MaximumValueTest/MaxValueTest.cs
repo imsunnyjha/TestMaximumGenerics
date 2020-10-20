@@ -60,5 +60,32 @@ namespace MaximumValueTest
 
             Assert.AreEqual(45.5, max);
         }
+        [TestMethod]
+        public void GivenString_MaxFirstString_ShouldReturnFirstString()
+        {
+            MaximumValue maximumNumber = new MaximumValue();
+
+            string max = maximumNumber.GetMaximumString("88.8", "55.99", "-111");
+
+            Assert.AreEqual("88.8", max);
+        }
+        [TestMethod]
+        public void GivenString_MaxSecondString_ShouldReturnSecondString()
+        {
+            MaximumValue maximumNumber = new MaximumValue();
+
+            string max = maximumNumber.GetMaximumString("2.22", "99", "55");
+
+            Assert.AreEqual("99", max);
+        }
+        [TestMethod]
+        public void GivenString_MaxThirdString_ShouldReturnThirdString()
+        {
+            MaximumValue maximumNumber = new MaximumValue();
+
+            string max = maximumNumber.GetMaximumString("4.44", "33.3", "99.99");
+
+            Assert.AreEqual("99.99", max);
+        }
     }
 }
