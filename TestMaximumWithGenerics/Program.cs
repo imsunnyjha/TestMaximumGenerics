@@ -34,6 +34,19 @@ namespace TestMaximumWithGenerics
             double thirdDoubleValue = Convert.ToDouble(Console.ReadLine());
             double maxDoubleNumber = maximumNumber.GetMaximumDoubleNumber(firstDoubleValue, secondDoubleValue, thirdDoubleValue);
             Console.WriteLine("Maximum :" + maxDoubleNumber);
+
+            ///<summary>
+            ///String Calling
+            ///</summary>
+            Console.WriteLine("\nMaximum String>>>>>>>>>");
+            Console.WriteLine("\nFirst Value: ");
+            string firstStringValue = Console.ReadLine();
+            Console.WriteLine("\nSecond Value: ");
+            string secondStringValue = Console.ReadLine();
+            Console.WriteLine("\nThird Value: ");
+            string thirdStringValue = Console.ReadLine();
+            string maxStringValue = maximumNumber.GetMaximumString(firstStringValue, secondStringValue, thirdStringValue);
+            Console.WriteLine("Maximum :" + maxStringValue);
         }
     }
 }
