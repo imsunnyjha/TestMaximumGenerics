@@ -21,8 +21,7 @@ namespace TestMaximumWithGenerics
                 intValues[i] = Convert.ToInt32(values[i]);
             }
             MaximumValue<int> maximumInt = new MaximumValue<int>(intValues);
-            int maxIntNumber = maximumInt.GetMaximum();
-            Console.WriteLine("Maximum :" + maxIntNumber);
+            maximumInt.PrintMaxValue();
 
             ///<summary>
             ///Double Calling
@@ -36,8 +35,7 @@ namespace TestMaximumWithGenerics
                 doubleValues[i] = Convert.ToDouble(values[i]);
             }
             MaximumValue<double> maximumDouble = new MaximumValue<double>(doubleValues);
-            double maxDoubleNumber = maximumDouble.GetMaximum();
-            Console.WriteLine("Maximum :" + maxDoubleNumber);
+            maximumDouble.PrintMaxValue();
 
             ///<summary>
             ///String Calling
@@ -48,6 +46,7 @@ namespace TestMaximumWithGenerics
             MaximumValue<string> maximumString = new MaximumValue<string>(values);
             string maxStringValue = maximumString.GetMaximum();
             Console.WriteLine("Maximum :" + maxStringValue);
+            maximumString.PrintMaxValue();
         }
     }
 }

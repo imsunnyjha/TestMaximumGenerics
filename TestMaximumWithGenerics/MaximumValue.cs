@@ -16,5 +16,9 @@ namespace TestMaximumWithGenerics
             Array.Sort(values);
             return values[^1];
         }
+        public void PrintMaxValue()
+        {
+            Console.WriteLine("Maximum Value :" + GetMaximum());
+        }
     }
 }
