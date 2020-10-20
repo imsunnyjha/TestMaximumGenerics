@@ -7,45 +7,46 @@ namespace TestMaximumWithGenerics
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Maximum Test Using Generics!");
-            MaximumValue maximumNumber = new MaximumValue();
 
             ///<summary>
             ///Integer Calling
             ///</summary>
+            string[] values;
+            int[] intValues = new int[100];
             Console.WriteLine("\nMaximum Integer>>>>>>>>>");
-            Console.WriteLine("\nFirst Value: ");
-            int firstIntValue = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nSecond Value: ");
-            int secondIntValue = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nThird Value: ");
-            int thirdIntValue = Convert.ToInt32(Console.ReadLine());
-            int maxIntNumber = MaximumValue.GetMaximumIntegerNumber(firstIntValue, secondIntValue, thirdIntValue);
+            Console.WriteLine("Enter integers...........");
+            values = Console.ReadLine().Split(" ");
+            for (int i = 0; i < values.Length; i++)
+            {
+                intValues[i] = Convert.ToInt32(values[i]);
+            }
+            MaximumValue<int> maximumInt = new MaximumValue<int>(intValues);
+            int maxIntNumber = maximumInt.GetMaximum();
             Console.WriteLine("Maximum :" + maxIntNumber);
 
             ///<summary>
             ///Double Calling
             ///</summary>
+            double[] doubleValues = new double[100];
             Console.WriteLine("\nMaximum Double>>>>>>>>>");
-            Console.WriteLine("\nFirst Value: ");
-            double firstDoubleValue = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("\nSecond Value: ");
-            double secondDoubleValue = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("\nThird Value: ");
-            double thirdDoubleValue = Convert.ToDouble(Console.ReadLine());
-            double maxDoubleNumber = maximumNumber.GetMaximumDoubleNumber(firstDoubleValue, secondDoubleValue, thirdDoubleValue);
+            Console.WriteLine("Enter float numbers............");
+            values = Console.ReadLine().Split(" ");
+            for (int i = 0; i < values.Length; i++)
+            {
+                doubleValues[i] = Convert.ToDouble(values[i]);
+            }
+            MaximumValue<double> maximumDouble = new MaximumValue<double>(doubleValues);
+            double maxDoubleNumber = maximumDouble.GetMaximum();
             Console.WriteLine("Maximum :" + maxDoubleNumber);
 
             ///<summary>
             ///String Calling
             ///</summary>
             Console.WriteLine("\nMaximum String>>>>>>>>>");
-            Console.WriteLine("\nFirst Value: ");
-            string firstStringValue = Console.ReadLine();
-            Console.WriteLine("\nSecond Value: ");
-            string secondStringValue = Console.ReadLine();
-            Console.WriteLine("\nThird Value: ");
-            string thirdStringValue = Console.ReadLine();
-            string maxStringValue = maximumNumber.GetMaximumString(firstStringValue, secondStringValue, thirdStringValue);
+            Console.WriteLine("Enter Strings..........");
+            values = Console.ReadLine().Split(" ");
+            MaximumValue<string> maximumString = new MaximumValue<string>(values);
+            string maxStringValue = maximumString.GetMaximum();
             Console.WriteLine("Maximum :" + maxStringValue);
         }
     }
